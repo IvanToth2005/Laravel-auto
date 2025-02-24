@@ -41,8 +41,8 @@ class BodyController extends Controller
             ['name'=>'required|min:3|max:255'],
             ['name.min'=>'A módosított szónak minimum 3 betűnek kell lennie!']
         );
-        $body  = new Body();
-        $body->name = $request->input('name');
+        $body  = Body::find($id);
+        $body->name = $request->input('name');  
         $body->save();
 
         return redirect()->route('bodies.index')->with('success', "{$body->name} sikeresen létrehozva");
@@ -86,9 +86,9 @@ class BodyController extends Controller
             ['name'=>'required|min:3|max:255'],
             ['name.min'=>'A módosított szónak minimum 3 betűnek kell lennie!']
         );
-        $body  = Body::find($id);
-        $body= $request->input('name');
-        $body=save();
+        $body = Body::find($id);
+        $body->name = $request->input('name');
+        $body->save();
 
         return redirect()->route('bodies.index')->with('success', "{$body->name} sikeresen módosítva");
     }

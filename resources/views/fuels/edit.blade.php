@@ -2,13 +2,13 @@
 @section('content')
     <div>
         <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
-        @include('fuels.error')
-        <form action="{{ route('fuels.update', $body->id) }}" method="post">
+        @include('error')
+        <form action="{{ route('fuels.update', $fuel->id) }}" method="post">
             @csrf
-            @method('PUT')
+            @method('PATCH')
             <fieldset>
                 <label for="name">Megnevezés</label>
-                <input type="text" id="name" name="name" required value="{{ old('name', $body->name) }}">
+                <input type="text" id="name" name="name" required value="{{ old('name', $fuel->name) }}">
             </fieldset>
             <button type="submit">Ment</button>
             <a href="{{ route('fuels.index') }}">Mégse</a>

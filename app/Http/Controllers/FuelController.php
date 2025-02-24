@@ -87,8 +87,8 @@ class FuelController extends Controller
             ['name.min'=>'A módosított szónak minimum 3 betűnek kell lennie!']
         );
         $fuel  = Fuel::find($id);
-        $fuel= $request->input('name');
-        $fuel=save();
+        $fuel->name = $request->input('name');  
+        $fuel->save();  
 
         return redirect()->route('fuels.index')->with('success', "{$fuel->name} sikeresen módosítva");
     }

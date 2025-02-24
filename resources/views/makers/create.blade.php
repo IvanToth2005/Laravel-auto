@@ -4,6 +4,7 @@
     <div>
         <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
         <!-- ide íratjuk ki a validációs hibákat -->
+         @include ('error')
         <form action="{{route('makers.store')}}" method="post">
             @csrf
             <fieldset>

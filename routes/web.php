@@ -23,28 +23,32 @@ Route::get('/', function () {
 
 
 //Route::resource('makers', MakerController::class);
-Route::resource('makers', MakerController::class);
+//Route::resource('makers', MakerController::class);
 Route::get('makers', [MakerController::class, 'index'])->name('makers.index');
-Route::get('/makers/{body}', [MakerController::class, 'show'])->name('makers.show');
 Route::get('/makers/{body}/edit', [MakerController::class, 'edit'])->name('makers.edit');
 Route::get('/makers/create', [MakerController::class, 'create'])->name('makers.create');
 Route::patch('/makers/{body}', [MakerController::class, 'update'])->name('makers.update');
 Route::delete('/makers/{body}', [MakerController::class, 'destroy'])->name('makers.destroy');
+Route::post('/maker', [MakerController::class, 'store'])->name('makers.store');
+Route::get('/makers/{body}', [MakerController::class, 'show'])->name('makers.show');
 
 Route::get('models', [ModelController::class, 'index'])->name('models.index');
 
-Route::resource('fuels', FuelController::class);
+//Route::resource('fuels', FuelController::class);
 Route::get('fuels', [FuelController::class, 'index'])->name('fuels.index');
-Route::get('/fuels/{body}', [FuelController::class, 'show'])->name('fuels.show');
 Route::get('/fuels/{body}/edit', [FuelController::class, 'edit'])->name('fuels.edit');
 Route::get('/fuels/create', [FuelController::class, 'create'])->name('fuels.create');
 Route::patch('/fuels/{body}', [FuelController::class, 'update'])->name('fuels.update');
 Route::delete('/fuels/{body}', [FuelController::class, 'destroy'])->name('fuels.destroy');
+Route::post('/fuels', [FuelController::class, 'store'])->name('fuels.store');
+Route::get('/fuels/{body}', [FuelController::class, 'show'])->name('fuels.show');
 
-Route::resource('bodies', BodyController::class);
+//Route::resource('bodies', BodyController::class);
 Route::get('bodies', [BodyController::class, 'index'])->name('bodies.index');
-Route::get('/bodies/{body}', [BodyController::class, 'show'])->name('bodies.show');
 Route::get('/bodies/{body}/edit', [BodyController::class, 'edit'])->name('bodies.edit');
 Route::get('/bodies/create', [BodyController::class, 'create'])->name('bodies.create');
 Route::patch('/bodies/{body}', [BodyController::class, 'update'])->name('bodies.update');
 Route::delete('/bodies/{body}', [BodyController::class, 'destroy'])->name('bodies.destroy');
+Route::post('/bodies', [BodyController::class, 'store'])->name('bodies.store');
+Route::get('/bodies/{body}', [BodyController::class, 'show'])->name('bodies.show');
+

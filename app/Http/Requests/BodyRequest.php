@@ -13,7 +13,7 @@ class BodyRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,21 @@ class BodyRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->method() === 'PATCH') {
+            return ['name' => 'nullable|min:3|max:255'];
+        }
         return [
-            //
+            'name' => 'required|min:3|max:255',
+        ];
+
+        
+    }
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Kötelező mező!',
+            'name.min' => 'Legalább 3 karakter legyen!',
+            'name.max' => 'Legfeljebb 255 karakter legyen!',
         ];
     }
 }

@@ -2,10 +2,10 @@
 @section('content')
     <div>
         <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
-        @include('makers.error')
+        @include('error')
         <form action="{{ route('makers.update', $maker->id) }}" method="post">
             @csrf
-            @method('PUT')
+            @method('PATCH')
             <fieldset>
                 <label for="name">Megnevezés</label>
                 <input type="text" id="name" name="name" required value="{{ old('name', $maker->name) }}">
