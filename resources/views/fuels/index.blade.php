@@ -8,7 +8,7 @@
     <a href="{{ route('fuels.create') }}" title="Új">Új hozzáadása</a>
         <table>
             <thead>
-                <tr><th>#</th><th>Megnevezés</th><th>Logo</th><th>Gombok</th></tr>
+                <tr><th>#</th><th>Megnevezés</th><th>Gombok</th><th>Logo</th></tr>
             </thead>
             <tbody>
 

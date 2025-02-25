@@ -7,7 +7,22 @@ use Illuminate\Database\Eloquent\Model as EloquentModel;
 
 class Model extends EloquentModel
 {
-    use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['name'];
+
+    protected $fillable = ['maker_id', 'name'];
+
+    function maker()
+    {
+        return $this->belongsTo(Maker::class);
+    }
+
+    function trims()
+    {
+        return $this->hasMany(Trim::class);
+    }
+
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class);
+    }
 }

@@ -29,6 +29,9 @@
                     <li><a href="{{ route('makers.index') }}">Gyártók</a></li>
                 </ul>
                 <ul>
+                    <li><a href="{{ route('models.index') }}">Modellek</a></li>
+                </ul>
+                <ul>
                     <li><a href="{{ route('fuels.index') }}">Üzemanyag</a></li>
                 </ul>
                 <ul>

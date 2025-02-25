@@ -8,20 +8,20 @@ use App\Models\Maker;
 class MakerSeeder extends Seeder
 {
     const MAKERS = [
-        'Crossover',
-        'Fastback',
-        'Hardtop',
-        'Hatchback',
-        'Kabrió',
-        'Kombi',
-        'Kupé',
-        'Liftback',
-        'Limuzin',
-        'Minivan',
-        'Pickup',
-        'Roadster',
-        'Szedán',
-        'Targa',
+        'Toyota',
+        'Ford',
+        'BMW',
+        'Mercedes-Benz',
+        'Honda',
+        'Volkswagen',
+        'Audi',
+        'Nissan',
+        'Chevrolet',
+        'Hyundai',
+        'Tesla',
+        'Porsche',
+        'Jaguar',
+        'Ferrari',
     ];
     /**
      * Run the database seeds.

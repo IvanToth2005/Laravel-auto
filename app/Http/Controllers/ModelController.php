@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\ModelRequest;
 use Illuminate\Http\Request;
 use App\Models\Model;
 
@@ -12,11 +12,19 @@ class ModelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $models = Model::all();
-        //ddd($models);
-        return view('models.index', compact('models'));
+        
+        $makers = \App\Models\Maker::all();
+
+        
+            if ($request->has('maker_id') && $request->maker_id != '') {
+                $models = Model::where('maker_id', $request->maker_id)->get();
+            } else {
+                $models = Model::all();
+            }
+
+        return view('models.index', compact('models', 'makers'));
     }
 
     /**

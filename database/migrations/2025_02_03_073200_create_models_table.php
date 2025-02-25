@@ -11,12 +11,13 @@ class CreateModelsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('models', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('maker_id');
+            $table->foreign('maker_id')->references('id')->on('makers');
             $table->string('name')->index();
-           
         });
     }
 

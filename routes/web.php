@@ -32,7 +32,7 @@ Route::delete('/makers/{body}', [MakerController::class, 'destroy'])->name('make
 Route::post('/maker', [MakerController::class, 'store'])->name('makers.store');
 Route::get('/makers/{body}', [MakerController::class, 'show'])->name('makers.show');
 
-Route::get('models', [ModelController::class, 'index'])->name('models.index');
+
 
 //Route::resource('fuels', FuelController::class);
 Route::get('fuels', [FuelController::class, 'index'])->name('fuels.index');
@@ -52,3 +52,4 @@ Route::delete('/bodies/{body}', [BodyController::class, 'destroy'])->name('bodie
 Route::post('/bodies', [BodyController::class, 'store'])->name('bodies.store');
 Route::get('/bodies/{body}', [BodyController::class, 'show'])->name('bodies.show');
 
+Route::get('models', [ModelController::class, 'index'])->name('models.index');
